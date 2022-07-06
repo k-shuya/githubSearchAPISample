@@ -16,6 +16,7 @@
 		501BFA362875AF8B00B29269 /* githubSearchAPISampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA352875AF8B00B29269 /* githubSearchAPISampleUITests.swift */; };
 		501BFA382875AF8B00B29269 /* githubSearchAPISampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA372875AF8B00B29269 /* githubSearchAPISampleUITestsLaunchTests.swift */; };
 		501BFA482875D97200B29269 /* SearchUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501BFA472875D97200B29269 /* SearchUser.storyboard */; };
+		501BFA4A2875DA9E00B29269 /* UserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501BFA492875DA9E00B29269 /* UserInfo.storyboard */; };
 		A6A7972E33BBF95976C6419A /* Pods_githubSearchAPISample_githubSearchAPISampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9616C057B34B72DADBC0E6 /* Pods_githubSearchAPISample_githubSearchAPISampleUITests.framework */; };
 		FE7393048714B50C108EF76B /* Pods_githubSearchAPISampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23AE4B7D23C12088A65727E /* Pods_githubSearchAPISampleTests.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		501BFA352875AF8B00B29269 /* githubSearchAPISampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githubSearchAPISampleUITests.swift; sourceTree = "<group>"; };
 		501BFA372875AF8B00B29269 /* githubSearchAPISampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githubSearchAPISampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		501BFA472875D97200B29269 /* SearchUser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchUser.storyboard; sourceTree = "<group>"; };
+		501BFA492875DA9E00B29269 /* UserInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInfo.storyboard; sourceTree = "<group>"; };
 		65C69330286AA219BC9DFAAD /* Pods-githubSearchAPISample-githubSearchAPISampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubSearchAPISample-githubSearchAPISampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-githubSearchAPISample-githubSearchAPISampleUITests/Pods-githubSearchAPISample-githubSearchAPISampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1C614A4FD0FB07EDE0F462D /* Pods-githubSearchAPISample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubSearchAPISample.debug.xcconfig"; path = "Target Support Files/Pods-githubSearchAPISample/Pods-githubSearchAPISample.debug.xcconfig"; sourceTree = "<group>"; };
 		A23AE4B7D23C12088A65727E /* Pods_githubSearchAPISampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_githubSearchAPISampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				501BFA472875D97200B29269 /* SearchUser.storyboard */,
+				501BFA492875DA9E00B29269 /* UserInfo.storyboard */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				501BFA222875AF8B00B29269 /* Preview Assets.xcassets in Resources */,
+				501BFA4A2875DA9E00B29269 /* UserInfo.storyboard in Resources */,
 				501BFA482875D97200B29269 /* SearchUser.storyboard in Resources */,
 				501BFA1F2875AF8B00B29269 /* Assets.xcassets in Resources */,
 			);
