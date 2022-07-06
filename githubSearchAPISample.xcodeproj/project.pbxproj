@@ -125,6 +125,11 @@
 		501BFA192875AF8900B29269 /* githubSearchAPISample */ = {
 			isa = PBXGroup;
 			children = (
+				501BFA4F2875E1EC00B29269 /* View */,
+				501BFA4E2875E1DD00B29269 /* Interactor */,
+				501BFA4D2875E1C800B29269 /* Presenter */,
+				501BFA4B2875E16A00B29269 /* Entity */,
+				501BFA4C2875E1A800B29269 /* Router */,
 				501BFA462875D97200B29269 /* UserInterface */,
 				501BFA1A2875AF8900B29269 /* githubSearchAPISampleApp.swift */,
 				501BFA1C2875AF8900B29269 /* ContentView.swift */,
@@ -166,6 +171,41 @@
 				501BFA492875DA9E00B29269 /* UserInfo.storyboard */,
 			);
 			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		501BFA4B2875E16A00B29269 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		501BFA4C2875E1A800B29269 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		501BFA4D2875E1C800B29269 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		501BFA4E2875E1DD00B29269 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		501BFA4F2875E1EC00B29269 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9DB56FB56E26F99BBDD33FE1 /* Pods */ = {
