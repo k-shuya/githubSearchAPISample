@@ -131,6 +131,7 @@
 				501BFA4B2875E16A00B29269 /* Entity */,
 				501BFA4C2875E1A800B29269 /* Router */,
 				501BFA462875D97200B29269 /* UserInterface */,
+				501BFA502875EC2800B29269 /* Sourcery */,
 				501BFA1A2875AF8900B29269 /* githubSearchAPISampleApp.swift */,
 				501BFA1C2875AF8900B29269 /* ContentView.swift */,
 				501BFA1E2875AF8B00B29269 /* Assets.xcassets */,
@@ -206,6 +207,29 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		501BFA502875EC2800B29269 /* Sourcery */ = {
+			isa = PBXGroup;
+			children = (
+				501BFA512875EC3F00B29269 /* Sources */,
+				501BFA522875EC5600B29269 /* Templates */,
+			);
+			path = Sourcery;
+			sourceTree = "<group>";
+		};
+		501BFA512875EC3F00B29269 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		501BFA522875EC5600B29269 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Templates;
 			sourceTree = "<group>";
 		};
 		9DB56FB56E26F99BBDD33FE1 /* Pods */ = {

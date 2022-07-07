@@ -1,0 +1,37 @@
+// swiftlint:disable line_length
+// swiftlint:disable variable_name
+
+
+
+{% for type in types.protocols where type.based.AutoInteractable or type|annotated:"AutoInteractable" %}{% if type.name != "AutoInteractable" %}
+
+// sourcery:file:{{ type.name }}Interactor.swift
+
+import UIKit
+
+protocol {{ type.name }}InteractorInterface: class {
+    // 実装すべきメソッド
+}
+
+final class {{ type.name }}Interactor : {{ type.name }}InteractorInterface {
+    private let __{{ type.name }}__API: {{ type.name }}APIInterface
+
+    init(__{{ type.name }}__API: {{ type.name }}APIInterface = {{ type.name }}API()) {
+        self.__{{ type.name }}__API = __{{ type.name }}__API
+    }
+
+    let url = "https://www.myendpoint.com"
+
+    // Reference to the Presenter's output interface.
+    weak var output: {{ type.name }}InteractorOutput!
+
+
+    // MARK: {{ type.name }}InteractorInterface
+}
+
+extension {{ type.name }}Interactor : {{ type.name }}InteractorInterface {
+    // 追加
+}
+
+// sourcery:end
+{% endif %}{% endfor %}

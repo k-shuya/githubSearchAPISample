@@ -1,0 +1,35 @@
+// swiftlint:disable line_length
+// swiftlint:disable variable_name
+
+
+
+{% for type in types.protocols where type.based.AutoPresentable or type|annotated:"AutoPresentable" %}{% if type.name != "AutoPresentable" %}
+
+// sourcery:file:{{ type.name }}Presenter.swift
+
+import UIKit
+
+protocol {{ type.name }}PresenterInterface: class {
+    // 実装すべきメソッド
+}
+
+class {{ type.name }}Presenter : {{ type.name }}PresenterInterface {
+    private let interactor: {{ type.name }}InteractorInterface
+    private let router: {{ type.name }}RouterInterface
+
+    private weak var view: {{ type.name }}View?
+
+    init(interactor: {{ type.name }}InteractorInterface,
+        router: {{ type.name }}RouterInterface,
+        view: {{ type.name }}View
+    ) {
+        self.interactor = interactor
+        self.router = router
+        self.view = view
+    }
+
+    // MARK: {{ type.name }}PresenterInterface
+}
+
+// sourcery:end
+{% endif %}{% endfor %}

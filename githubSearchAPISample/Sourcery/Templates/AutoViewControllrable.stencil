@@ -1,0 +1,33 @@
+// swiftlint:disable line_length
+// swiftlint:disable variable_name
+
+
+
+{% for type in types.protocols where type.based.AutoViewControllable or type|annotated:"AutoViewControllable" %}{% if type.name != "AutoViewControllable" %}
+
+// sourcery:file:{{ type.name }}VC.swift
+
+//
+//  { type.name }}VC.swift
+//  githubSearchAPISample
+//
+//  Created by 川村周也 on 2022/07/06.
+//
+
+import UIKit
+
+final class {{ type.name }}VC: UIViewController {
+
+    var presenter: {{ type.name }}PresenterInterface!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+
+extension {{ type.name }}VC: UIViewController {
+    // 追加
+}
+
+// sourcery:end
+{% endif %}{% endfor %}

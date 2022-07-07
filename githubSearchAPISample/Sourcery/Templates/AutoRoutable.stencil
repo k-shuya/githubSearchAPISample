@@ -1,0 +1,40 @@
+// swiftlint:disable line_length
+// swiftlint:disable variable_name
+
+
+
+{% for type in types.protocols where type.based.AutoRoutable or type|annotated:"AutoRoutable" %}{% if type.name != "AutoRoutable" %}
+
+// sourcery:file:{{ type.name }}Router.swift
+
+import UIKit
+
+enum {{ type.name }}RouterNavigationDestination {
+    // 遷移先を追加
+    case __next1__
+}
+
+protocol {{ type.name }}RouterInterface: RouterInterface {
+    func navigate(to destination: {{ type.name }}RouterNavigationDestination)
+}
+
+final class {{ type.name }}Router : BaseRouter {
+
+    init() {
+        let vc = {{ type.name }}VC()
+        super.init(vc)
+
+        let interactor = {{ type.name }}Interactor()
+        let presenter = {{ type.name }}Presenter(interactor: interactor, router: self, view: vc)
+        vc.presenter = presenter
+    }
+}
+
+extension {{ type.name }}Router : BaseRouter {
+    func navigate(to destination: {{ type.name }}RouterNavigationDestination) {
+        // switchで遷移先を振り分けていく
+    }
+}
+
+// sourcery:end
+{% endif %}{% endfor %}
