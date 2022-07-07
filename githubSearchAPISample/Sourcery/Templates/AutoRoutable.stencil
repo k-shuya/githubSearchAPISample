@@ -30,7 +30,7 @@ final class {{ type.name }}Router : BaseRouter {
     }
 }
 
-extension {{ type.name }}Router : BaseRouter {
+extension {{ type.name }}Router {
     func navigate(to destination: {{ type.name }}RouterNavigationDestination) {
         // switchで遷移先を振り分けていく
     }

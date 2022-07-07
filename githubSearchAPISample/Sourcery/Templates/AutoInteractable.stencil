@@ -29,7 +29,7 @@ final class {{ type.name }}Interactor : {{ type.name }}InteractorInterface {
     // MARK: {{ type.name }}InteractorInterface
 }
 
-extension {{ type.name }}Interactor : {{ type.name }}InteractorInterface {
+extension {{ type.name }}Interactor {
     // 追加
 }
 
