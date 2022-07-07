@@ -25,7 +25,7 @@ final class {{ type.name }}VC: UIViewController {
     }
 }
 
-extension {{ type.name }}VC: UIViewController {
+extension {{ type.name }}VC {
     // 追加
 }
 
