@@ -17,6 +17,16 @@
 		501BFA382875AF8B00B29269 /* githubSearchAPISampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA372875AF8B00B29269 /* githubSearchAPISampleUITestsLaunchTests.swift */; };
 		501BFA482875D97200B29269 /* SearchUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501BFA472875D97200B29269 /* SearchUser.storyboard */; };
 		501BFA4A2875DA9E00B29269 /* UserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501BFA492875DA9E00B29269 /* UserInfo.storyboard */; };
+		501BFA5928770AB700B29269 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 501BFA5828770AB700B29269 /* .swiftlint.yml */; };
+		501BFA632877325F00B29269 /* AutoInteractable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 501BFA5C2877325F00B29269 /* AutoInteractable.stencil */; };
+		501BFA642877325F00B29269 /* AutoRoutable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 501BFA5D2877325F00B29269 /* AutoRoutable.stencil */; };
+		501BFA652877325F00B29269 /* AutoViewControllrable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 501BFA5E2877325F00B29269 /* AutoViewControllrable.stencil */; };
+		501BFA662877325F00B29269 /* AutoPresentable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 501BFA5F2877325F00B29269 /* AutoPresentable.stencil */; };
+		501BFA672877325F00B29269 /* SearchUserSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA612877325F00B29269 /* SearchUserSource.swift */; };
+		501BFA71287732AD00B29269 /* SearchUserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA69287732AD00B29269 /* SearchUserRouter.swift */; };
+		501BFA72287732AD00B29269 /* SearchUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA6A287732AD00B29269 /* SearchUserVC.swift */; };
+		501BFA74287732AD00B29269 /* SearchUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA6C287732AD00B29269 /* SearchUserPresenter.swift */; };
+		501BFA77287732AD00B29269 /* SearchUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA6F287732AD00B29269 /* SearchUserInteractor.swift */; };
 		A6A7972E33BBF95976C6419A /* Pods_githubSearchAPISample_githubSearchAPISampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9616C057B34B72DADBC0E6 /* Pods_githubSearchAPISample_githubSearchAPISampleUITests.framework */; };
 		FE7393048714B50C108EF76B /* Pods_githubSearchAPISampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23AE4B7D23C12088A65727E /* Pods_githubSearchAPISampleTests.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +63,16 @@
 		501BFA372875AF8B00B29269 /* githubSearchAPISampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githubSearchAPISampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		501BFA472875D97200B29269 /* SearchUser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchUser.storyboard; sourceTree = "<group>"; };
 		501BFA492875DA9E00B29269 /* UserInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInfo.storyboard; sourceTree = "<group>"; };
+		501BFA5828770AB700B29269 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		501BFA5C2877325F00B29269 /* AutoInteractable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoInteractable.stencil; sourceTree = "<group>"; };
+		501BFA5D2877325F00B29269 /* AutoRoutable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoRoutable.stencil; sourceTree = "<group>"; };
+		501BFA5E2877325F00B29269 /* AutoViewControllrable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoViewControllrable.stencil; sourceTree = "<group>"; };
+		501BFA5F2877325F00B29269 /* AutoPresentable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoPresentable.stencil; sourceTree = "<group>"; };
+		501BFA612877325F00B29269 /* SearchUserSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserSource.swift; sourceTree = "<group>"; };
+		501BFA69287732AD00B29269 /* SearchUserRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserRouter.swift; sourceTree = "<group>"; };
+		501BFA6A287732AD00B29269 /* SearchUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserVC.swift; sourceTree = "<group>"; };
+		501BFA6C287732AD00B29269 /* SearchUserPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserPresenter.swift; sourceTree = "<group>"; };
+		501BFA6F287732AD00B29269 /* SearchUserInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserInteractor.swift; sourceTree = "<group>"; };
 		65C69330286AA219BC9DFAAD /* Pods-githubSearchAPISample-githubSearchAPISampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubSearchAPISample-githubSearchAPISampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-githubSearchAPISample-githubSearchAPISampleUITests/Pods-githubSearchAPISample-githubSearchAPISampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1C614A4FD0FB07EDE0F462D /* Pods-githubSearchAPISample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubSearchAPISample.debug.xcconfig"; path = "Target Support Files/Pods-githubSearchAPISample/Pods-githubSearchAPISample.debug.xcconfig"; sourceTree = "<group>"; };
 		A23AE4B7D23C12088A65727E /* Pods_githubSearchAPISampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_githubSearchAPISampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +123,7 @@
 		501BFA0E2875AF8900B29269 = {
 			isa = PBXGroup;
 			children = (
+				501BFA5828770AB700B29269 /* .swiftlint.yml */,
 				501BFA192875AF8900B29269 /* githubSearchAPISample */,
 				501BFA2A2875AF8B00B29269 /* githubSearchAPISampleTests */,
 				501BFA342875AF8B00B29269 /* githubSearchAPISampleUITests */,
@@ -184,6 +205,7 @@
 		501BFA4C2875E1A800B29269 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				501BFA69287732AD00B29269 /* SearchUserRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -191,6 +213,7 @@
 		501BFA4D2875E1C800B29269 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				501BFA6C287732AD00B29269 /* SearchUserPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -198,6 +221,7 @@
 		501BFA4E2875E1DD00B29269 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				501BFA6F287732AD00B29269 /* SearchUserInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -205,6 +229,7 @@
 		501BFA4F2875E1EC00B29269 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				501BFA6A287732AD00B29269 /* SearchUserVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,24 +237,37 @@
 		501BFA502875EC2800B29269 /* Sourcery */ = {
 			isa = PBXGroup;
 			children = (
-				501BFA512875EC3F00B29269 /* Sources */,
-				501BFA522875EC5600B29269 /* Templates */,
+				501BFA68287732AD00B29269 /* Generated */,
+				501BFA602877325F00B29269 /* Sources */,
+				501BFA5B2877325F00B29269 /* Templates */,
 			);
 			path = Sourcery;
 			sourceTree = "<group>";
 		};
-		501BFA512875EC3F00B29269 /* Sources */ = {
+		501BFA5B2877325F00B29269 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
+				501BFA5C2877325F00B29269 /* AutoInteractable.stencil */,
+				501BFA5D2877325F00B29269 /* AutoRoutable.stencil */,
+				501BFA5E2877325F00B29269 /* AutoViewControllrable.stencil */,
+				501BFA5F2877325F00B29269 /* AutoPresentable.stencil */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		501BFA602877325F00B29269 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				501BFA612877325F00B29269 /* SearchUserSource.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		501BFA522875EC5600B29269 /* Templates */ = {
+		501BFA68287732AD00B29269 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Templates;
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		9DB56FB56E26F99BBDD33FE1 /* Pods */ = {
@@ -257,6 +295,7 @@
 				501BFA142875AF8900B29269 /* Frameworks */,
 				501BFA152875AF8900B29269 /* Resources */,
 				F95CDB695B1CBCBBAFD23A51 /* [CP] Embed Pods Frameworks */,
+				501BFA532876F54C00B29269 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -354,8 +393,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501BFA5928770AB700B29269 /* .swiftlint.yml in Resources */,
 				501BFA222875AF8B00B29269 /* Preview Assets.xcassets in Resources */,
+				501BFA662877325F00B29269 /* AutoPresentable.stencil in Resources */,
 				501BFA4A2875DA9E00B29269 /* UserInfo.storyboard in Resources */,
+				501BFA632877325F00B29269 /* AutoInteractable.stencil in Resources */,
+				501BFA652877325F00B29269 /* AutoViewControllrable.stencil in Resources */,
+				501BFA642877325F00B29269 /* AutoRoutable.stencil in Resources */,
 				501BFA482875D97200B29269 /* SearchUser.storyboard in Resources */,
 				501BFA1F2875AF8B00B29269 /* Assets.xcassets in Resources */,
 			);
@@ -422,6 +466,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		501BFA532876F54C00B29269 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n  \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		7A97476AE438A5E2D7767E1F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,8 +546,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501BFA72287732AD00B29269 /* SearchUserVC.swift in Sources */,
 				501BFA1D2875AF8900B29269 /* ContentView.swift in Sources */,
+				501BFA74287732AD00B29269 /* SearchUserPresenter.swift in Sources */,
+				501BFA77287732AD00B29269 /* SearchUserInteractor.swift in Sources */,
 				501BFA1B2875AF8900B29269 /* githubSearchAPISampleApp.swift in Sources */,
+				501BFA672877325F00B29269 /* SearchUserSource.swift in Sources */,
+				501BFA71287732AD00B29269 /* SearchUserRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
