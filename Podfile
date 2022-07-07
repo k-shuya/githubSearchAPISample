@@ -11,6 +11,7 @@ target 'githubSearchAPISample' do
   pod 'AlamofireImage'
   pod 'SwiftLint'
   pod 'SwiftGen'
+  pod 'Sourcery'
 
   target 'githubSearchAPISampleTests' do
     inherit! :search_paths
