@@ -218,8 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				501BFA472875D97200B29269 /* SearchUser.storyboard */,
-				501BFA492875DA9E00B29269 /* UserInfo.storyboard */,
 				501BFA82287AEFD200B29269 /* SearchUserTableViewCell.xib */,
+				501BFA492875DA9E00B29269 /* UserInfo.storyboard */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
