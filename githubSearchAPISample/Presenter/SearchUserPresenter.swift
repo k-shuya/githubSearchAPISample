@@ -8,20 +8,23 @@ protocol SearchUserPresenterInterface: class {
     // 実装すべきメソッド
 }
 
-class SearchUserPresenter : SearchUserPresenterInterface {
+class SearchUserPresenter {
     private let interactor: SearchUserInteractorInterface
-    private let router: SearchUserRouterInterface
-
-    private weak var view: SearchUserView?
+    private weak var view: SearchUserViewInterface?
+//    private let router: SearchUserRouterInterface
 
     init(interactor: SearchUserInteractorInterface,
-        router: SearchUserRouterInterface,
-        view: SearchUserView
+//        router: SearchUserRouterInterface,
+        view: SearchUserViewInterface
     ) {
         self.interactor = interactor
-        self.router = router
+//        self.router = router
         self.view = view
     }
 
     // MARK: SearchUserPresenterInterface
+}
+
+extension SearchUserPresenter: SearchUserPresenterInterface {
+    
 }

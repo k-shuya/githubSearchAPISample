@@ -2,28 +2,51 @@
 // DO NOT EDIT
 
 
-import UIKit
+import Foundation
 
 protocol SearchUserInteractorInterface: class {
-    // 実装すべきメソッド
+//    func get(parameters: GitHubSearchParameters, handler: ResultHandler<GithubSearchUserItems>?)
+    func get(handler: ResultHandler<GithubSearchUserItems>?)
+    func getSearchedItems() -> [GithubSearchUserEntity]
 }
 
-final class SearchUserInteractor : SearchUserInteractorInterface {
-    private let __SearchUser__API: SearchUserAPIInterface
+final class SearchUserInteractor {
+    private let githubSearchAPI: GithubAPI
+    private var items: [GithubSearchUserEntity] = [GithubSearchUserEntity]()
 
-    init(__SearchUser__API: SearchUserAPIInterface = SearchUserAPI()) {
-        self.__SearchUser__API = __SearchUser__API
+    init(githubSearchAPI: GithubAPI = GithubAPI()) {
+        self.githubSearchAPI = githubSearchAPI
     }
 
     let url = "https://www.myendpoint.com"
 
     // Reference to the Presenter's output interface.
-    weak var output: SearchUserInteractorOutput!
+//    weak var output: SearchUserInteractorOutput!
 
 
     // MARK: SearchUserInteractorInterface
 }
 
-extension SearchUserInteractor : SearchUserInteractorInterface {
-    // 追加
+extension SearchUserInteractor: SearchUserInteractorInterface {
+    func get(handler: ResultHandler<GithubSearchUserItems>?) {
+        githubSearchAPI.request { result in
+            switch result {
+            case .success(let items):
+                self.items = items.items
+            case .failure(let error):
+                break
+//                self.showAPIAlert(error: error)
+            }
+        }
+    }
+    
+    func getSearchedItems() -> [GithubSearchUserEntity] {
+        return items
+    }
+    
+//    func showAPIAlert(error: GithubAPIError) {
+//        let alert = UIAlertController(title: error.title, message: nil, preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "閉じる", style: .cancel, handler: nil))
+//        self.present(alert, animated: true, completion: nil)
+//    }
 }
