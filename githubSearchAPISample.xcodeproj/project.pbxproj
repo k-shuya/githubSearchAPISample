@@ -274,9 +274,9 @@
 			isa = PBXGroup;
 			children = (
 				501BFA5C2877325F00B29269 /* AutoInteractable.stencil */,
-				501BFA5D2877325F00B29269 /* AutoRoutable.stencil */,
-				501BFA5E2877325F00B29269 /* AutoViewControllrable.stencil */,
 				501BFA5F2877325F00B29269 /* AutoPresentable.stencil */,
+				501BFA5E2877325F00B29269 /* AutoViewControllrable.stencil */,
+				501BFA5D2877325F00B29269 /* AutoRoutable.stencil */,
 			);
 			path = Templates;
 			sourceTree = "<group>";

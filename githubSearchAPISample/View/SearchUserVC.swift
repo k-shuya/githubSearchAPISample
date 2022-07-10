@@ -22,7 +22,7 @@ final class SearchUserVC: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchresultTable: UITableView!
     
-    private var repositories: [GithubSearchUserEntity] = [] {
+    private var users: [GithubSearchUserEntity] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.searchresultTable.reloadData() // 画面の更新
