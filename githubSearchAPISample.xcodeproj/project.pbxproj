@@ -27,6 +27,10 @@
 		501BFA72287732AD00B29269 /* SearchUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA6A287732AD00B29269 /* SearchUserVC.swift */; };
 		501BFA74287732AD00B29269 /* SearchUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA6C287732AD00B29269 /* SearchUserPresenter.swift */; };
 		501BFA77287732AD00B29269 /* SearchUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA6F287732AD00B29269 /* SearchUserInteractor.swift */; };
+		501BFA7A2877348400B29269 /* GithubSearchUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA792877348400B29269 /* GithubSearchUserEntity.swift */; };
+		501BFA7C287884E500B29269 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA7B287884E500B29269 /* Const.swift */; };
+		501BFA7E2878861C00B29269 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA7D2878861C00B29269 /* GithubAPI.swift */; };
+		501BFA802879D91500B29269 /* GithubAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA7F2879D91500B29269 /* GithubAPIError.swift */; };
 		A6A7972E33BBF95976C6419A /* Pods_githubSearchAPISample_githubSearchAPISampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9616C057B34B72DADBC0E6 /* Pods_githubSearchAPISample_githubSearchAPISampleUITests.framework */; };
 		FE7393048714B50C108EF76B /* Pods_githubSearchAPISampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23AE4B7D23C12088A65727E /* Pods_githubSearchAPISampleTests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +77,11 @@
 		501BFA6A287732AD00B29269 /* SearchUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserVC.swift; sourceTree = "<group>"; };
 		501BFA6C287732AD00B29269 /* SearchUserPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserPresenter.swift; sourceTree = "<group>"; };
 		501BFA6F287732AD00B29269 /* SearchUserInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserInteractor.swift; sourceTree = "<group>"; };
+		501BFA792877348400B29269 /* GithubSearchUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSearchUserEntity.swift; sourceTree = "<group>"; };
+		501BFA7B287884E500B29269 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		501BFA7D2878861C00B29269 /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
+		501BFA7F2879D91500B29269 /* GithubAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIError.swift; sourceTree = "<group>"; };
+		501BFA81287A782D00B29269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		65C69330286AA219BC9DFAAD /* Pods-githubSearchAPISample-githubSearchAPISampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubSearchAPISample-githubSearchAPISampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-githubSearchAPISample-githubSearchAPISampleUITests/Pods-githubSearchAPISample-githubSearchAPISampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1C614A4FD0FB07EDE0F462D /* Pods-githubSearchAPISample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubSearchAPISample.debug.xcconfig"; path = "Target Support Files/Pods-githubSearchAPISample/Pods-githubSearchAPISample.debug.xcconfig"; sourceTree = "<group>"; };
 		A23AE4B7D23C12088A65727E /* Pods_githubSearchAPISampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_githubSearchAPISampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +155,7 @@
 		501BFA192875AF8900B29269 /* githubSearchAPISample */ = {
 			isa = PBXGroup;
 			children = (
+				501BFA81287A782D00B29269 /* Info.plist */,
 				501BFA4F2875E1EC00B29269 /* View */,
 				501BFA4E2875E1DD00B29269 /* Interactor */,
 				501BFA4D2875E1C800B29269 /* Presenter */,
@@ -157,6 +167,9 @@
 				501BFA1C2875AF8900B29269 /* ContentView.swift */,
 				501BFA1E2875AF8B00B29269 /* Assets.xcassets */,
 				501BFA202875AF8B00B29269 /* Preview Content */,
+				501BFA7B287884E500B29269 /* Const.swift */,
+				501BFA7D2878861C00B29269 /* GithubAPI.swift */,
+				501BFA7F2879D91500B29269 /* GithubAPIError.swift */,
 			);
 			path = githubSearchAPISample;
 			sourceTree = "<group>";
@@ -198,6 +211,7 @@
 		501BFA4B2875E16A00B29269 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				501BFA792877348400B29269 /* GithubSearchUserEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -546,13 +560,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501BFA802879D91500B29269 /* GithubAPIError.swift in Sources */,
 				501BFA72287732AD00B29269 /* SearchUserVC.swift in Sources */,
+				501BFA7E2878861C00B29269 /* GithubAPI.swift in Sources */,
 				501BFA1D2875AF8900B29269 /* ContentView.swift in Sources */,
 				501BFA74287732AD00B29269 /* SearchUserPresenter.swift in Sources */,
 				501BFA77287732AD00B29269 /* SearchUserInteractor.swift in Sources */,
+				501BFA7A2877348400B29269 /* GithubSearchUserEntity.swift in Sources */,
 				501BFA1B2875AF8900B29269 /* githubSearchAPISampleApp.swift in Sources */,
 				501BFA672877325F00B29269 /* SearchUserSource.swift in Sources */,
 				501BFA71287732AD00B29269 /* SearchUserRouter.swift in Sources */,
+				501BFA7C287884E500B29269 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,7 +733,7 @@
 				DEVELOPMENT_TEAM = V85Y4GF6BG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = githubSearchAPISample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -745,7 +763,7 @@
 				DEVELOPMENT_TEAM = V85Y4GF6BG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = githubSearchAPISample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
