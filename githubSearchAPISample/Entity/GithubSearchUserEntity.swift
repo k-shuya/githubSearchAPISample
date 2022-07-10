@@ -9,6 +9,10 @@ import Foundation
 
 struct GithubSearchUserItems: Codable {
     let items: [GithubSearchUserEntity]
+    
+    enum CodingKeys: String, CodingKey {
+        case items = "items"
+    }
 }
 
 struct GithubSearchUserEntity: Codable {
