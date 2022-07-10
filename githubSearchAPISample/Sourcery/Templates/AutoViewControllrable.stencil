@@ -16,16 +16,23 @@
 
 import UIKit
 
+protocol {{ type.name }}View: AnyObject {
+    // 実装すべきメソッド
+}
+
 final class {{ type.name }}VC: UIViewController {
-
-    var presenter: {{ type.name }}PresenterInterface!
-
+    var presenter: {{ type.name }}Presentation!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func inject(presenter: {{ type.name }}Presentation) {
+        self.presenter = presenter
+    }
 }
 
-extension {{ type.name }}VC {
+extension {{ type.name }}VC: {{ type.name }}View {
     // 追加
 }
 

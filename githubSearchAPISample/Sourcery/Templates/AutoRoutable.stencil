@@ -9,28 +9,29 @@
 
 import UIKit
 
-enum {{ type.name }}RouterNavigationDestination {
-    // 遷移先を追加
-    case __next1__
+protocol {{ type.name }}Wireframe {
+    // 実装すべきメソッド
 }
 
-protocol {{ type.name }}RouterInterface: RouterInterface {
-    func navigate(to destination: {{ type.name }}RouterNavigationDestination)
-}
-
-final class {{ type.name }}Router : BaseRouter {
-
-    init() {
-        let vc = {{ type.name }}VC()
-        super.init(vc)
-
+final class {{ type.name }}Router {
+    private unowned let viewController: UIViewController
+    
+    private init(viewController: UIViewController) {
+        self.viewController = viewController
+    }
+    
+    static func assembleModules() -> UIViewController {
+        let view = UIStoryboard.__name__.instantiateInitialViewController() as! {{ type.name }}VC
         let interactor = {{ type.name }}Interactor()
-        let presenter = {{ type.name }}Presenter(interactor: interactor, router: self, view: vc)
-        vc.presenter = presenter
+        let router = {{ type.name }}Router(viewController: view)
+        let presenter = {{ type.name }}Presenter(view: view, interactor: interactor, router: router)
+        // viewとpresenterは互いが互いを知っている
+        view.inject(presenter: presenter)
+        return view
     }
 }
 
-extension {{ type.name }}Router : BaseRouter {
+extension {{ type.name }}Router: {{ type.name }}Wireframe { : BaseRouter {
     func navigate(to destination: {{ type.name }}RouterNavigationDestination) {
         // switchで遷移先を振り分けていく
     }

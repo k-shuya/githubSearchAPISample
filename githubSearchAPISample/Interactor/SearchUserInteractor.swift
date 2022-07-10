@@ -4,26 +4,38 @@
 
 import UIKit
 
-protocol SearchUserInteractorInterface: class {
-    // 実装すべきメソッド
+protocol SearchUserUsecase: AnyObject {
+    func get(keyword: String, handler: ResultHandler<[GithubSearchUserEntity]>?)
+    func getResults() -> [GithubSearchUserEntity]?
 }
 
-final class SearchUserInteractor : SearchUserInteractorInterface {
-    private let __SearchUser__API: SearchUserAPIInterface
+final class SearchUserInteractor {
+    private let githubAPI: GithubAPI
+    private var results: [GithubSearchUserEntity]?
 
-    init(__SearchUser__API: SearchUserAPIInterface = SearchUserAPI()) {
-        self.__SearchUser__API = __SearchUser__API
+    init(githubAPI: GithubAPI = GithubAPI()) {
+        self.githubAPI = githubAPI
+        results = []
     }
-
-    let url = "https://www.myendpoint.com"
-
-    // Reference to the Presenter's output interface.
-    weak var output: SearchUserInteractorOutput!
 
 
     // MARK: SearchUserInteractorInterface
 }
 
-extension SearchUserInteractor : SearchUserInteractorInterface {
-    // 追加
+extension SearchUserInteractor: SearchUserUsecase {
+    func get(keyword: String, handler: ResultHandler<[GithubSearchUserEntity]>? = nil) {
+        self.githubAPI.requestSearchUser(keyword: keyword) { result in
+            switch result {
+                case .success(let results):
+                handler?(.success(results.items))
+                self.results = results.items
+                case .failure(let error):
+                    handler?(.failure(error))
+            }
+        }
+    }
+    
+    func getResults() -> [GithubSearchUserEntity]? {
+        return self.results
+    }
 }

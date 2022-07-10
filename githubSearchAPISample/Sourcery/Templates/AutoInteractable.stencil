@@ -7,29 +7,21 @@
 
 // sourcery:file:{{ type.name }}Interactor.swift
 
-import UIKit
+import Foundation
 
-protocol {{ type.name }}InteractorInterface: class {
+protocol {{ type.name }}Usecase: AnyObject {
     // 実装すべきメソッド
 }
 
-final class {{ type.name }}Interactor : {{ type.name }}InteractorInterface {
+final class {{ type.name }}Interactor {
     private let __{{ type.name }}__API: {{ type.name }}APIInterface
 
     init(__{{ type.name }}__API: {{ type.name }}APIInterface = {{ type.name }}API()) {
         self.__{{ type.name }}__API = __{{ type.name }}__API
     }
-
-    let url = "https://www.myendpoint.com"
-
-    // Reference to the Presenter's output interface.
-    weak var output: {{ type.name }}InteractorOutput!
-
-
-    // MARK: {{ type.name }}InteractorInterface
 }
 
-extension {{ type.name }}Interactor : {{ type.name }}InteractorInterface {
+extension {{ type.name }}Interactor: {{ type.name }}Usecase {
     // 追加
 }
 

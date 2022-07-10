@@ -4,29 +4,36 @@
 
 import UIKit
 
-enum SearchUserRouterNavigationDestination {
-    // 遷移先を追加
-    case __next1__
+protocol SearchUserWireframe {
+//    func showWeb(initParameters: WebUsecaseInitParameters)
+    func showAlert(error: Error)
 }
 
-protocol SearchUserRouterInterface: RouterInterface {
-    func navigate(to destination: SearchUserRouterNavigationDestination)
-}
-
-final class SearchUserRouter : BaseRouter {
-
-    init() {
-        let vc = SearchUserVC()
-        super.init(vc)
-
+final class SearchUserRouter {
+    private unowned let viewController: UIViewController
+    
+    private init(viewController: UIViewController) {
+        self.viewController = viewController
+    }
+    
+    static func assembleModules() -> UIViewController {
+        let view = UIStoryboard.searchUser.instantiateInitialViewController() as! SearchUserVC
         let interactor = SearchUserInteractor()
-        let presenter = SearchUserPresenter(interactor: interactor, router: self, view: vc)
-        vc.presenter = presenter
+        let router = SearchUserRouter(viewController: view)
+        let presenter = SearchUserPresenter(view: view, interactor: interactor, router: router)
+        // viewとpresenterは互いが互いを知っている
+        view.inject(presenter: presenter)
+        return view
     }
 }
 
-extension SearchUserRouter : BaseRouter {
-    func navigate(to destination: SearchUserRouterNavigationDestination) {
-        // switchで遷移先を振り分けていく
+extension SearchUserRouter: SearchUserWireframe {
+//    func showWeb(initParameters: WebUsecaseInitParameters) {
+//        let next = WebRouter.assembleModules(initParameters: initParameters)
+//        viewController.show(next: next)
+//    }
+    
+    func showAlert(error: Error) {
+        print(error.localizedDescription)
     }
 }

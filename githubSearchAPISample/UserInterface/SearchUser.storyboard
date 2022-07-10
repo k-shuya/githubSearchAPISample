@@ -8,16 +8,49 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search UserVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="SearchUserVC" customModule="githubSearchAPISample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="GrI-y2-Lzq">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7q2-Bi-ex3">
+                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="userCell" rowHeight="50" id="lpi-lz-Thl" customClass="SearchResultTableViewCell" customModule="githubSearchAPISample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lpi-lz-Thl" id="VIe-eW-oRS">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GrI-y2-Lzq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5H1-KG-AbE"/>
+                            <constraint firstItem="GrI-y2-Lzq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="6q2-gf-A98"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7q2-Bi-ex3" secondAttribute="trailing" id="TKU-kE-2O6"/>
+                            <constraint firstItem="7q2-Bi-ex3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Z71-6E-Dt7"/>
+                            <constraint firstItem="GrI-y2-Lzq" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ZY2-rC-36o"/>
+                            <constraint firstItem="7q2-Bi-ex3" firstAttribute="top" secondItem="GrI-y2-Lzq" secondAttribute="bottom" id="amY-bL-Jae"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7q2-Bi-ex3" secondAttribute="bottom" id="i5J-7n-4aG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="GrI-y2-Lzq" id="nDT-wG-vxQ"/>
+                        <outlet property="searchresultTable" destination="7q2-Bi-ex3" id="4zZ-bF-pwJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,28 +7,30 @@
 
 // sourcery:file:{{ type.name }}Presenter.swift
 
-import UIKit
+import Foundation
 
-protocol {{ type.name }}PresenterInterface: class {
+protocol {{ type.name }}Presentation: class {
     // 実装すべきメソッド
 }
 
-class {{ type.name }}Presenter : {{ type.name }}PresenterInterface {
+class {{ type.name }}Presenter {
     private let interactor: {{ type.name }}InteractorInterface
-    private let router: {{ type.name }}RouterInterface
+    private let router: {{ type.name }}Wireframe
 
     private weak var view: {{ type.name }}View?
 
-    init(interactor: {{ type.name }}InteractorInterface,
-        router: {{ type.name }}RouterInterface,
+    init(interactor: {{ type.name }}Usecase,
+        router: {{ type.name }}Wireframe,
         view: {{ type.name }}View
     ) {
         self.interactor = interactor
         self.router = router
         self.view = view
     }
+}
 
-    // MARK: {{ type.name }}PresenterInterface
+extension {{ type.name }}Presenter: {{ type.name }}Presentation {
+    // メソッドの実装
 }
 
 // sourcery:end

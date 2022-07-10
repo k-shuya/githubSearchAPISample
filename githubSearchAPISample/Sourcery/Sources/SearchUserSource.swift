@@ -8,4 +8,9 @@
 
 import Foundation
 
+typealias AutoViewControllable = Any
+typealias AutoPresentable = Any
+typealias AutoInteractable = Any
+typealias AutoRoutable = Any
+
 protocol SearchUser: AutoViewControllable, AutoPresentable, AutoInteractable, AutoRoutable {}
