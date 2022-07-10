@@ -11,17 +11,10 @@
 
 import UIKit
 
-protocol SearchUserViewInterface: class {
-    // 実装すべきメソッド
-}
-
 final class SearchUserVC: UIViewController {
 
     var presenter: SearchUserPresenterInterface!
-    
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var searchResultTable: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }

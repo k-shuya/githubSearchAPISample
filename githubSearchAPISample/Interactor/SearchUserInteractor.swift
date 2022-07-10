@@ -2,51 +2,28 @@
 // DO NOT EDIT
 
 
-import Foundation
+import UIKit
 
 protocol SearchUserInteractorInterface: class {
-//    func get(parameters: GitHubSearchParameters, handler: ResultHandler<GithubSearchUserItems>?)
-    func get(handler: ResultHandler<GithubSearchUserItems>?)
-    func getSearchedItems() -> [GithubSearchUserEntity]
+    // 実装すべきメソッド
 }
 
-final class SearchUserInteractor {
-    private let githubSearchAPI: GithubAPI
-    private var items: [GithubSearchUserEntity] = [GithubSearchUserEntity]()
+final class SearchUserInteractor : SearchUserInteractorInterface {
+    private let __SearchUser__API: SearchUserAPIInterface
 
-    init(githubSearchAPI: GithubAPI = GithubAPI()) {
-        self.githubSearchAPI = githubSearchAPI
+    init(__SearchUser__API: SearchUserAPIInterface = SearchUserAPI()) {
+        self.__SearchUser__API = __SearchUser__API
     }
 
     let url = "https://www.myendpoint.com"
 
     // Reference to the Presenter's output interface.
-//    weak var output: SearchUserInteractorOutput!
+    weak var output: SearchUserInteractorOutput!
 
 
     // MARK: SearchUserInteractorInterface
 }
 
-extension SearchUserInteractor: SearchUserInteractorInterface {
-    func get(handler: ResultHandler<GithubSearchUserItems>?) {
-        githubSearchAPI.request { result in
-            switch result {
-            case .success(let items):
-                self.items = items.items
-            case .failure(let error):
-                break
-//                self.showAPIAlert(error: error)
-            }
-        }
-    }
-    
-    func getSearchedItems() -> [GithubSearchUserEntity] {
-        return items
-    }
-    
-//    func showAPIAlert(error: GithubAPIError) {
-//        let alert = UIAlertController(title: error.title, message: nil, preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "閉じる", style: .cancel, handler: nil))
-//        self.present(alert, animated: true, completion: nil)
-//    }
+extension SearchUserInteractor : SearchUserInteractorInterface {
+    // 追加
 }
