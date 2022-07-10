@@ -10,7 +10,7 @@ import Alamofire
 typealias ResultHandler<T> = (Result<T, GithubAPIError>) -> Void
 
 struct GithubAPI {
-    func requestSearchUser(keyword: String, handler: @escaping ResultHandler<[GithubSearchUserEntity]>) {
+    func requestSearchUser(keyword: String, handler: @escaping ResultHandler<GithubSearchUserItems>) {
         if URL(string: GithubAPIEndpoints.searchUser) == nil {
             handler(.failure(.invalidURL))
             return
@@ -22,7 +22,7 @@ struct GithubAPI {
                 return
             }
             do {
-                let items = try JSONDecoder().decode([GithubSearchUserEntity].self, from: data)
+                let items = try JSONDecoder().decode(GithubSearchUserItems.self, from: data)
                 handler(.success(items))
             } catch {
                 handler(.failure(.unknown(error)))

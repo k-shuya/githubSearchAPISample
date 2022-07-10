@@ -27,8 +27,8 @@ extension SearchUserInteractor: SearchUserUsecase {
         self.githubAPI.requestSearchUser(keyword: keyword) { result in
             switch result {
                 case .success(let results):
-                    handler?(.success(results))
-                    self.results = results
+                handler?(.success(results.items))
+                self.results = results.items
                 case .failure(let error):
                     handler?(.failure(error))
             }
