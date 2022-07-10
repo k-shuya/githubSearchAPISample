@@ -31,6 +31,10 @@
 		501BFA7C287884E500B29269 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA7B287884E500B29269 /* Const.swift */; };
 		501BFA7E2878861C00B29269 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA7D2878861C00B29269 /* GithubAPI.swift */; };
 		501BFA802879D91500B29269 /* GithubAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA7F2879D91500B29269 /* GithubAPIError.swift */; };
+		501BFA83287AEFD300B29269 /* SearchUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 501BFA82287AEFD200B29269 /* SearchUserTableViewCell.xib */; };
+		501BFA85287B105F00B29269 /* UIStoryBoardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA84287B105F00B29269 /* UIStoryBoardExtension.swift */; };
+		501BFA87287B1B4300B29269 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA86287B1B4300B29269 /* AppRouter.swift */; };
+		501BFA89287B1B9A00B29269 /* AppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501BFA88287B1B9A00B29269 /* AppPresenter.swift */; };
 		A6A7972E33BBF95976C6419A /* Pods_githubSearchAPISample_githubSearchAPISampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9616C057B34B72DADBC0E6 /* Pods_githubSearchAPISample_githubSearchAPISampleUITests.framework */; };
 		FE7393048714B50C108EF76B /* Pods_githubSearchAPISampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23AE4B7D23C12088A65727E /* Pods_githubSearchAPISampleTests.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +86,10 @@
 		501BFA7D2878861C00B29269 /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 		501BFA7F2879D91500B29269 /* GithubAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIError.swift; sourceTree = "<group>"; };
 		501BFA81287A782D00B29269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		501BFA82287AEFD200B29269 /* SearchUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchUserTableViewCell.xib; sourceTree = "<group>"; };
+		501BFA84287B105F00B29269 /* UIStoryBoardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryBoardExtension.swift; sourceTree = "<group>"; };
+		501BFA86287B1B4300B29269 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		501BFA88287B1B9A00B29269 /* AppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPresenter.swift; sourceTree = "<group>"; };
 		65C69330286AA219BC9DFAAD /* Pods-githubSearchAPISample-githubSearchAPISampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubSearchAPISample-githubSearchAPISampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-githubSearchAPISample-githubSearchAPISampleUITests/Pods-githubSearchAPISample-githubSearchAPISampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1C614A4FD0FB07EDE0F462D /* Pods-githubSearchAPISample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-githubSearchAPISample.debug.xcconfig"; path = "Target Support Files/Pods-githubSearchAPISample/Pods-githubSearchAPISample.debug.xcconfig"; sourceTree = "<group>"; };
 		A23AE4B7D23C12088A65727E /* Pods_githubSearchAPISampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_githubSearchAPISampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +176,7 @@
 				501BFA1E2875AF8B00B29269 /* Assets.xcassets */,
 				501BFA202875AF8B00B29269 /* Preview Content */,
 				501BFA7B287884E500B29269 /* Const.swift */,
+				501BFA84287B105F00B29269 /* UIStoryBoardExtension.swift */,
 				501BFA7D2878861C00B29269 /* GithubAPI.swift */,
 				501BFA7F2879D91500B29269 /* GithubAPIError.swift */,
 			);
@@ -204,6 +213,7 @@
 			children = (
 				501BFA472875D97200B29269 /* SearchUser.storyboard */,
 				501BFA492875DA9E00B29269 /* UserInfo.storyboard */,
+				501BFA82287AEFD200B29269 /* SearchUserTableViewCell.xib */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -220,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				501BFA69287732AD00B29269 /* SearchUserRouter.swift */,
+				501BFA86287B1B4300B29269 /* AppRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -228,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				501BFA6C287732AD00B29269 /* SearchUserPresenter.swift */,
+				501BFA88287B1B9A00B29269 /* AppPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -409,6 +421,7 @@
 			files = (
 				501BFA5928770AB700B29269 /* .swiftlint.yml in Resources */,
 				501BFA222875AF8B00B29269 /* Preview Assets.xcassets in Resources */,
+				501BFA83287AEFD300B29269 /* SearchUserTableViewCell.xib in Resources */,
 				501BFA662877325F00B29269 /* AutoPresentable.stencil in Resources */,
 				501BFA4A2875DA9E00B29269 /* UserInfo.storyboard in Resources */,
 				501BFA632877325F00B29269 /* AutoInteractable.stencil in Resources */,
@@ -562,13 +575,16 @@
 			files = (
 				501BFA802879D91500B29269 /* GithubAPIError.swift in Sources */,
 				501BFA72287732AD00B29269 /* SearchUserVC.swift in Sources */,
+				501BFA85287B105F00B29269 /* UIStoryBoardExtension.swift in Sources */,
 				501BFA7E2878861C00B29269 /* GithubAPI.swift in Sources */,
 				501BFA1D2875AF8900B29269 /* ContentView.swift in Sources */,
 				501BFA74287732AD00B29269 /* SearchUserPresenter.swift in Sources */,
+				501BFA89287B1B9A00B29269 /* AppPresenter.swift in Sources */,
 				501BFA77287732AD00B29269 /* SearchUserInteractor.swift in Sources */,
 				501BFA7A2877348400B29269 /* GithubSearchUserEntity.swift in Sources */,
 				501BFA1B2875AF8900B29269 /* githubSearchAPISampleApp.swift in Sources */,
 				501BFA672877325F00B29269 /* SearchUserSource.swift in Sources */,
+				501BFA87287B1B4300B29269 /* AppRouter.swift in Sources */,
 				501BFA71287732AD00B29269 /* SearchUserRouter.swift in Sources */,
 				501BFA7C287884E500B29269 /* Const.swift in Sources */,
 			);
