@@ -38,8 +38,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="searchBar" destination="GrI-y2-Lzq" id="VRs-vA-Nae"/>
-                        <outlet property="searchResultTable" destination="7q2-Bi-ex3" id="kLh-PU-bdD"/>
+                        <outlet property="searchBar" destination="GrI-y2-Lzq" id="nDT-wG-vxQ"/>
+                        <outlet property="searchresultTable" destination="7q2-Bi-ex3" id="4zZ-bF-pwJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
