@@ -35,6 +35,10 @@ final class SearchUserVC: UIViewController {
         
         searchBar.delegate = self
         searchresultTable.delegate = self
+        searchresultTable.dataSource = self
+        
+        let nib = UINib(nibName: "SearchUserTableViewCell", bundle: nil)
+        searchresultTable.register(nib, forCellReuseIdentifier: "userCell")
     }
     
     func inject(presenter: SearchUserPresentation) {
@@ -44,6 +48,7 @@ final class SearchUserVC: UIViewController {
 
 extension SearchUserVC: SearchUserView {
     func reloadTableView(items: [GithubSearchUserEntity]) {
+        self.users = items
         DispatchQueue.main.async {
             self.searchresultTable.reloadData()
         }
@@ -69,6 +74,15 @@ extension SearchUserVC: UISearchBarDelegate {
     }
 }
 
-extension SearchUserVC: UITableViewDelegate {
+extension SearchUserVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: SearchResultTableViewCell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! SearchResultTableViewCell
+        // セルに表示する値を設定する
+        cell.setData(user: users[indexPath.row])
+        return cell
+    }
 }
