@@ -10,3 +10,8 @@ import Foundation
 public struct GithubAPIEndpoints {
     public static let searchUser = "https://api.github.com/search/users"
 }
+
+public struct StoryBoardNames {
+    static let searchUser = "SearchUser"
+    static let userInfo = "UserInfo"
+}
