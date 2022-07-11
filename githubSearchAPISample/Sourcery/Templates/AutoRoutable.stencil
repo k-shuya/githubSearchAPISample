@@ -25,16 +25,13 @@ final class {{ type.name }}Router {
         let interactor = {{ type.name }}Interactor()
         let router = {{ type.name }}Router(viewController: view)
         let presenter = {{ type.name }}Presenter(view: view, interactor: interactor, router: router)
-        // viewとpresenterは互いが互いを知っている
+
         view.inject(presenter: presenter)
         return view
     }
 }
 
-extension {{ type.name }}Router: {{ type.name }}Wireframe { : BaseRouter {
-    func navigate(to destination: {{ type.name }}RouterNavigationDestination) {
-        // switchで遷移先を振り分けていく
-    }
+extension {{ type.name }}Router: {{ type.name }}Wireframe {
 }
 
 // sourcery:end

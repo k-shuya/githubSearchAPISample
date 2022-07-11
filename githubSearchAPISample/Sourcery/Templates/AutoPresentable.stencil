@@ -9,23 +9,23 @@
 
 import Foundation
 
-protocol {{ type.name }}Presentation: class {
+protocol {{ type.name }}Presentation: AnyObject {
     // 実装すべきメソッド
 }
 
 class {{ type.name }}Presenter {
-    private let interactor: {{ type.name }}InteractorInterface
+    private let interactor: {{ type.name }}Usecase
     private let router: {{ type.name }}Wireframe
 
     private weak var view: {{ type.name }}View?
 
-    init(interactor: {{ type.name }}Usecase,
-        router: {{ type.name }}Wireframe,
-        view: {{ type.name }}View
+    init(interactor: view: {{ type.name }}View,
+        {{ type.name }}Usecase,
+        router: {{ type.name }}Wireframe
     ) {
+        self.view = view
         self.interactor = interactor
         self.router = router
-        self.view = view
     }
 }
 
