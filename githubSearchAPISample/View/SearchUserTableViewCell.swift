@@ -34,7 +34,7 @@ class SearchResultTableViewCell: UITableViewCell {
         let URL = URL(string: imageRef)!
         avatarImageView.af.setImage(
             withURL: URL,
-            placeholderImage: UIImage(named: "no-image")
+            placeholderImage: UIImage(systemName: "photo")
         )
     }
     
