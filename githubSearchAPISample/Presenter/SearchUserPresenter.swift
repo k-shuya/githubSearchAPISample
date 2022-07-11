@@ -16,9 +16,9 @@ class SearchUserPresenter {
     private weak var view: SearchUserView?
 
     init(view: SearchUserView, interactor: SearchUserUsecase, router: SearchUserWireframe) {
+        self.view = view
         self.interactor = interactor
         self.router = router
-        self.view = view
     }
 
     // MARK: SearchUserPresenterInterface
@@ -26,8 +26,12 @@ class SearchUserPresenter {
 
 extension SearchUserPresenter: SearchUserPresentation {
     func searchButtonDidPush(searchText: String) {
-        if searchText.isEmpty { return }
-        // `@escaping`がついているクロージャの場合は循環参照にならないよう`[weak self]`でキャプチャ
+        // TODO:- 空のクエリの時の処理(アラート出すとか、EmptyImage出すとか)
+        if searchText.isEmpty {
+            self.view?.reloadTableView(items: [GithubSearchUserEntity]())
+            return
+        }
+        // '@escaping'がついているクロージャの場合は循環参照にならないよう'[weak self]'でキャプチャ
         interactor.get(keyword: searchText) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -40,8 +44,8 @@ extension SearchUserPresenter: SearchUserPresentation {
     }
 
     func didSelect(indexPath: IndexPath) {
-//        let gitHubSearchEntity = interactor.getResults()[indexPath.row]
-//        let initParameters: WebUsecaseInitParameters = .init(entity: gitHubSearchEntity)
-//        router.showWeb(initParameters: initParameters)
+        let gitHubSearchUserEntity = interactor.getResults()![indexPath.row]
+        let urlString: String = gitHubSearchUserEntity.htmlUrl
+        router.showUserInfo(urlString: urlString)
     }
 }
