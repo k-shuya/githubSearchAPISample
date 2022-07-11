@@ -38,7 +38,7 @@ extension SearchUserPresenter: SearchUserPresentation {
             case .success(let items):
                 self.view?.reloadTableView(items: items)
             case .failure(let error):
-                self.router.showAlert(error: error)
+                self.view?.showErrorAlert(error: error)
             }
         }
     }

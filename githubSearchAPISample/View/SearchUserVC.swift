@@ -13,7 +13,7 @@ import UIKit
 
 protocol SearchUserView: AnyObject {
     func reloadTableView(items: [GithubSearchUserEntity])
-    func showErrorAlert()
+    func showErrorAlert(error: GithubAPIError)
 }
 
 final class SearchUserVC: UIViewController {
@@ -68,9 +68,8 @@ extension SearchUserVC: UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
     
-    // - TODO: 実際のエラーに即した実装に変える
-    func showErrorAlert() {
-        let alert = UIAlertController(title: "ネットワークエラー", message: "しばらく時間をおいてから再度お試しください", preferredStyle: .alert)
+    func showErrorAlert(error: GithubAPIError) {
+        let alert = UIAlertController(title: "APIError", message: error.localizedDescription, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(okAction)
         DispatchQueue.main.async {
