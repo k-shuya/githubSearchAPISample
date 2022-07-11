@@ -15,3 +15,9 @@ public struct StoryBoardNames {
     static let searchUser = "SearchUser"
     static let userInfo = "UserInfo"
 }
+
+public struct SearchUserConfig {
+    static let resultTVCNibName = "SearchUserTableViewCell"
+    static let resultTVCIdentifier = "userCell"
+    static let serchBarPlaceholder = "ユーザ名で検索"
+}
