@@ -1,5 +1,5 @@
 //
-//   UIImageViewExtension.swift
+//  UIImageViewExtension.swift
 //  githubSearchAPISample
 //
 //  Created by 川村周也 on 2022/07/11.

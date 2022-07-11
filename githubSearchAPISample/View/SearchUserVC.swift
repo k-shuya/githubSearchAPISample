@@ -29,6 +29,7 @@ final class SearchUserVC: UIViewController {
             }
         }
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +38,11 @@ final class SearchUserVC: UIViewController {
         searchresultTable.delegate = self
         searchresultTable.dataSource = self
         
-        let nib = UINib(nibName: "SearchUserTableViewCell", bundle: nil)
-        searchresultTable.register(nib, forCellReuseIdentifier: "userCell")
+        let nib = UINib(nibName: SearchUserConfig.resultTVCNibName, bundle: nil)
+        searchresultTable.register(nib, forCellReuseIdentifier: SearchUserConfig.resultTVCIdentifier)
+        
+        searchBar.searchBarStyle = .minimal
+        searchBar.placeholder = SearchUserConfig.serchBarPlaceholder
     }
     
     func inject(presenter: SearchUserPresentation) {
@@ -64,6 +68,7 @@ extension SearchUserVC: UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
     
+    // - TODO: 実際のエラーに即した実装に変える
     func showErrorAlert() {
         let alert = UIAlertController(title: "ネットワークエラー", message: "しばらく時間をおいてから再度お試しください", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -74,13 +79,30 @@ extension SearchUserVC: UISearchBarDelegate {
     }
 }
 
-extension SearchUserVC: UITableViewDelegate, UITableViewDataSource {
+extension SearchUserVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       tableView.deselectRow(at: indexPath, animated: true)
+       presenter.didSelect(indexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 66
+    }
+    
+}
+
+extension SearchUserVC: UITableViewDataSource {
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tableView.isHidden = users.isEmpty ? true : false
         return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SearchResultTableViewCell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! SearchResultTableViewCell
+        
+        cell.avatarImageView.image = UIImage(systemName: "photo")
         // セルに表示する値を設定する
         cell.setData(user: users[indexPath.row])
         return cell

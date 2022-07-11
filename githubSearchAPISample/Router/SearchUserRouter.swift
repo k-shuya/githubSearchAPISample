@@ -5,7 +5,7 @@
 import UIKit
 
 protocol SearchUserWireframe {
-//    func showWeb(initParameters: WebUsecaseInitParameters)
+    func showUserInfo(urlString: String)
     func showAlert(error: Error)
 }
 
@@ -17,21 +17,24 @@ final class SearchUserRouter {
     }
     
     static func assembleModules() -> UIViewController {
-        let view = UIStoryboard.searchUser.instantiateInitialViewController() as! SearchUserVC
+        let nc = UIStoryboard.searchUser.instantiateInitialViewController() as! UINavigationController
+        let view = nc.viewControllers[0] as! SearchUserVC
+//        let view = UIStoryboard.searchUser.instantiateInitialViewController() as! SearchUserVC
         let interactor = SearchUserInteractor()
         let router = SearchUserRouter(viewController: view)
         let presenter = SearchUserPresenter(view: view, interactor: interactor, router: router)
-        // viewとpresenterは互いが互いを知っている
+
         view.inject(presenter: presenter)
         return view
     }
 }
 
 extension SearchUserRouter: SearchUserWireframe {
-//    func showWeb(initParameters: WebUsecaseInitParameters) {
-//        let next = WebRouter.assembleModules(initParameters: initParameters)
-//        viewController.show(next: next)
-//    }
+    func showUserInfo(urlString: String) {
+        let next = UserInfoRouter.assembleModules(urlString: urlString)
+        viewController.navigationController?.show(next, sender: nil)
+//        viewController.show(next, sender: nil)
+    }
     
     func showAlert(error: Error) {
         print(error.localizedDescription)
